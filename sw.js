@@ -1,0 +1,7 @@
+const VERSION='v2.0.2';
+const CACHE='neurodrift-'+VERSION;
+const ASSETS=['./','./index.html','./manifest.json','./privacy.html','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png','./favicon.ico','./splash.svg','./splash.png','https://unpkg.com/three@0.160.0/build/three.module.js'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS).catch(()=>{})));});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('neurodrift-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('message',e=>{if(!e.data)return;if(e.data.type==='SKIP_WAITING')self.skipWaiting();if(e.data.type==='GET_VERSION'&&e.source){e.source.postMessage({type:'VERSION',version:VERSION});}});
+self.addEventListener('fetch',e=>{const req=e.request;if(req.method!=='GET')return;if(req.mode==='navigate'){e.respondWith(fetch(req).then(res=>{const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy));return res;}).catch(()=>caches.match(req).then(r=>r||caches.match('./index.html'))));return;}e.respondWith(caches.match(req).then(cached=>{if(cached)return cached;return fetch(req).then(res=>{if(res.ok){const copy=res.clone();caches.open(CACHE).then(c=>c.put(req,copy));}return res;});}));});

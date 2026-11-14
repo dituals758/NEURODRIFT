@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="NEURODRIFT">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="65%">
+      <stop offset="0" stop-color="#120633"/>
+      <stop offset="1" stop-color="#05010f"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff2bd6" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#ff2bd6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="g2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="200" fill="url(#halo)"/>
+  <circle cx="256" cy="256" r="205" fill="none" stroke="#00e5ff" stroke-width="1.5" opacity="0.14"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#ff2bd6" stroke-width="9" filter="url(#g)"/>
+  <g fill="#00e5ff" filter="url(#g2)">
+    <circle cx="256" cy="337" r="8" opacity="0.65"/>
+    <circle cx="256" cy="365" r="6" opacity="0.38"/>
+    <circle cx="256" cy="387" r="4" opacity="0.18"/>
+  </g>
+  <g filter="url(#g)">
+    <polygon points="256,125 324,315 256,279 188,315" fill="#00e5ff" fill-opacity="0.22" stroke="#00e5ff" stroke-width="11" stroke-linejoin="round"/>
+    <circle cx="256" cy="225" r="9" fill="#00e5ff"/>
+  </g>
+</svg>

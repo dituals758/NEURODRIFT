@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dituals758.github.io/NEURODRIFT/sitemap.xml

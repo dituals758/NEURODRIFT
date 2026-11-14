@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1284 2778" width="1284" height="2778">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="65%">
+      <stop offset="0" stop-color="#120633"/>
+      <stop offset="1" stop-color="#05010f"/>
+    </radialGradient>
+    <linearGradient id="ship" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00e5ff"/>
+      <stop offset="1" stop-color="#ff2bd6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1284" height="2778" fill="url(#bg)"/>
+
+  <circle cx="642" cy="1180" r="300" fill="none" stroke="#ff2bd6" stroke-width="4" opacity="0.4" filter="url(#glow)"/>
+  <circle cx="642" cy="1180" r="320" fill="none" stroke="#00e5ff" stroke-width="1" opacity="0.15"/>
+
+  <g filter="url(#glow)">
+    <polygon points="642,910 782,1400 642,1310 502,1400" fill="url(#ship)" opacity="0.85"/>
+    <circle cx="642" cy="1160" r="14" fill="#00e5ff"/>
+  </g>
+
+  <g filter="url(#glowSoft)">
+    <circle cx="642" cy="1470" r="10" fill="#00e5ff" opacity="0.65"/>
+    <circle cx="642" cy="1510" r="7" fill="#00e5ff" opacity="0.4"/>
+    <circle cx="642" cy="1540" r="5" fill="#00e5ff" opacity="0.2"/>
+  </g>
+
+  <text x="642" y="1720" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="96" font-weight="800" letter-spacing="20"
+        fill="#00e5ff" filter="url(#glow)">NEURODRIFT</text>
+
+  <text x="642" y="1780" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="22" letter-spacing="22"
+        fill="#4a7f8f">ПРОТОКОЛ ICE · 2087</text>
+
+  <text x="642" y="2480" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="14" letter-spacing="10"
+        fill="#3f6b78">ЗАГРУЗКА НЕЙРО-ПОРТА</text>
+</svg>
