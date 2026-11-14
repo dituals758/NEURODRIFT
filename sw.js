@@ -1,4 +1,4 @@
-const VERSION='v2.0.2';
+const VERSION='v2.0.3';
 const CACHE='neurodrift-'+VERSION;
 const ASSETS=['./','./index.html','./manifest.json','./privacy.html','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png','./favicon.ico','./splash.svg','./splash.png','https://unpkg.com/three@0.160.0/build/three.module.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS).catch(()=>{})));});
